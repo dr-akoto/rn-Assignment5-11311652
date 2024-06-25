@@ -1,48 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 const DATA = [
   {
     id: '1',
-    title: 'Personal Loan',
-    icon: 'account-balance-wallet',
-    amount: '$250',
+    title: 'Language',
+    
   },
   {
     id: '2',
-    title: 'Grocery',
-    icon: 'shopping-cart',
-    amount: '$50',
+    title: 'My Pofile',
+  
   },
   {
     id: '3',
-    title: 'Internet Bill',
+    title: 'Contact Us',
     icon: 'router',
-    amount: '$80',
   },
   {
     id: '4',
-    title: 'Entertainment',
-    icon: 'videogame-asset',
-    amount: '$30',
+    title: 'Change Password',
   },
   {
     id: '5',
-    title: 'Transportation',
-    icon: 'directions-bus',
-    amount: '$20',
+    title: 'privacy Policy',
   },
 ];
 
-export default function App() {
+const Settings = () => {
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.item}>
       <View style={styles.itemLeft}>
-        <MaterialIcons name={item.icon} size={24} color="#444" />
         <View style={styles.itemText}>
           <Text style={styles.itemTitle}>{item.title}</Text>
-          <Text style={styles.itemAmount}>{item.amount}</Text>
+    
         </View>
       </View>
       <Ionicons name="chevron-forward" size={24} color="#666" />
@@ -65,7 +57,7 @@ export default function App() {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -113,3 +105,5 @@ const styles = StyleSheet.create({
     color: '#666',
   },
 });
+
+export default Settings;
