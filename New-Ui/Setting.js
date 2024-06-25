@@ -45,7 +45,7 @@ const Settings = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Ionicons name="arrow-back" size={24} color="#444" />
-        <Text style={styles.headerTitle}>Transactions</Text>
+        <Text style={styles.headerTitle}>Settings</Text>
         <Ionicons name="search" size={24} color="#444" />
       </View>
 
