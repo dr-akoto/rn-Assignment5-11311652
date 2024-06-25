@@ -1,0 +1,115 @@
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+
+const DATA = [
+  {
+    id: '1',
+    title: 'Personal Loan',
+    icon: 'account-balance-wallet',
+    amount: '$250',
+  },
+  {
+    id: '2',
+    title: 'Grocery',
+    icon: 'shopping-cart',
+    amount: '$50',
+  },
+  {
+    id: '3',
+    title: 'Internet Bill',
+    icon: 'router',
+    amount: '$80',
+  },
+  {
+    id: '4',
+    title: 'Entertainment',
+    icon: 'videogame-asset',
+    amount: '$30',
+  },
+  {
+    id: '5',
+    title: 'Transportation',
+    icon: 'directions-bus',
+    amount: '$20',
+  },
+];
+
+export default function App() {
+  const renderItem = ({ item }) => (
+    <TouchableOpacity style={styles.item}>
+      <View style={styles.itemLeft}>
+        <MaterialIcons name={item.icon} size={24} color="#444" />
+        <View style={styles.itemText}>
+          <Text style={styles.itemTitle}>{item.title}</Text>
+          <Text style={styles.itemAmount}>{item.amount}</Text>
+        </View>
+      </View>
+      <Ionicons name="chevron-forward" size={24} color="#666" />
+    </TouchableOpacity>
+  );
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Ionicons name="arrow-back" size={24} color="#444" />
+        <Text style={styles.headerTitle}>Transactions</Text>
+        <Ionicons name="search" size={24} color="#444" />
+      </View>
+
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        style={styles.list}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingTop: 40,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  headerTitle: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#444',
+  },
+  list: {
+    flex: 1,
+  },
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+  },
+  itemLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  itemText: {
+    marginLeft: 20,
+  },
+  itemTitle: {
+    fontSize: 16,
+    color: '#444',
+  },
+  itemAmount: {
+    fontSize: 14,
+    color: '#666',
+  },
+});

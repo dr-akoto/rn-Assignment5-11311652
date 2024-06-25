@@ -1,48 +1,117 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View,Image } from 'react-native';
+import Homepage from './Homepage';
+import settings from './settings'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.header}> 
-        <Image
-        source={require('./assets/imagesFolder/profile.png')}
-        style={styles.image}
-      />      
-      <Text style={styles.text}>Open up App.js !</Text>
-</View>
-     
-
-      <StatusBar style="auto" />
-    </View>
-  );
+  return (<><Homepage/>
+    <settings/></>
+  )
+   
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding:20
-    
+    padding: 20,
   },
-  header:{
-    display:'flex',
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between'
-
-
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
   },
-  text: {
-    color: 'black',
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 10,
+  },
+  welcomeText: {
+    fontSize: 16,
+    color: '#666',
+  },
+  nameText: {
     fontSize: 20,
-    marginTop:0,
-
+    fontWeight: 'bold',
   },
-  image:{
-    width:60,
-    height:60,
-    borderRadius:50,
-  }
+  searchIcon: {
+    marginLeft: 'auto',
+  },
+  card: {
+    backgroundColor: '#333',
+    borderRadius: 10,
+    padding: 20,
+    marginBottom: 20,
+  },
+  cardNumber: {
+    fontSize: 22,
+    color: '#fff',
+    marginBottom: 10,
+  },
+  cardHolder: {
+    fontSize: 18,
+    color: '#fff',
+    marginBottom: 10,
+  },
+  cardDetails: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  cardExpiry: {
+    color: '#fff',
+  },
+  cardCVV: {
+    color: '#fff',
+  },
+  cardLogo: {
+    alignSelf: 'flex-end',
+  },
+  actionButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  actionButton: {
+    alignItems: 'center',
+    padding: 10,
+  },
+  transactionSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  transactionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  sellAll: {
+    color: 'blue',
+  },
+  transactionList: {
+    marginBottom: 20,
+  },
+  transactionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  transactionDetails: {
+    marginLeft: 10,
+    flex: 1,
+  },
+  transactionCategory: {
+    color: '#666',
+  },
+  transactionAmount: {
+    fontWeight: 'bold',
+  },
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderTopWidth: 1,
+    borderTopColor: '#ddd',
+    paddingTop: 10,
+  },
 });
