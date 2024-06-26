@@ -1,26 +1,42 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 const Homepage = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Image 
-          style={styles.profileImage} 
-          source={require('./assets/imagesFolder/profile.png')} 
+        <Image
+          style={styles.profileImage}
+          source={require("./assets/imagesFolder/profile.png")}
         />
         <View>
           <Text style={styles.welcomeText}>Welcome back,</Text>
           <Text style={styles.nameText}>Eric Atsu</Text>
         </View>
-        <Ionicons name="search" size={24} color="black" style={styles.searchIcon} />
+        <Ionicons
+          name="search"
+          size={24}
+          color="black"
+          style={styles.searchIcon}
+        />
       </View>
-      
+
       <View style={styles.card}>
-        <Image source={require('./assets/imagesFolder/myCards.png')}/>
+        <Image
+          source={require("./assets/imagesFolder/Card.png")}
+          style={styles.cardImage}
+          resizeMode="contain"
+        />
       </View>
-      
+
       <View style={styles.actionButtons}>
         <TouchableOpacity style={styles.actionButton}>
           <Ionicons name="arrow-up" size={24} color="black" />
@@ -39,14 +55,14 @@ const Homepage = () => {
           <Text>Topup</Text>
         </TouchableOpacity>
       </View>
-      
+
       <View style={styles.transactionSection}>
         <Text style={styles.transactionTitle}>Transaction</Text>
         <TouchableOpacity>
           <Text style={styles.sellAll}>Sell All</Text>
         </TouchableOpacity>
       </View>
-      
+
       <View style={styles.transactionList}>
         <View style={styles.transactionItem}>
           <FontAwesome name="apple" size={24} color="black" />
@@ -56,7 +72,7 @@ const Homepage = () => {
           </View>
           <Text style={styles.transactionAmount}>- $5,99</Text>
         </View>
-      
+
         <View style={styles.transactionItem}>
           <FontAwesome name="spotify" size={24} color="black" />
           <View style={styles.transactionDetails}>
@@ -65,7 +81,7 @@ const Homepage = () => {
           </View>
           <Text style={styles.transactionAmount}>- $12,99</Text>
         </View>
-      
+
         <View style={styles.transactionItem}>
           <FontAwesome name="exchange" size={24} color="black" />
           <View style={styles.transactionDetails}>
@@ -74,7 +90,7 @@ const Homepage = () => {
           </View>
           <Text style={styles.transactionAmount}>$300</Text>
         </View>
-      
+
         <View style={styles.transactionItem}>
           <Ionicons name="cart" size={24} color="black" />
           <View style={styles.transactionDetails}>
@@ -84,7 +100,7 @@ const Homepage = () => {
           <Text style={styles.transactionAmount}>- $88</Text>
         </View>
       </View>
-      
+
       <View style={styles.navbar}>
         <Ionicons name="home" size={24} color="blue" />
         <Ionicons name="card" size={24} color="gray" />
@@ -93,17 +109,17 @@ const Homepage = () => {
       </View>
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 20,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 20,
   },
   profileImage: {
@@ -114,73 +130,54 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 16,
-    color: '#666',
+    color: "#666",
   },
   nameText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   searchIcon: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
   },
   card: {
-    backgroundColor: '#333',
-    borderRadius: 10,
-    padding: 20,
+    height: "30vh",
     marginBottom: 20,
+    alignItems: "center", // Center the image horizontally
+    justifyContent: "center", // Center the image vertically
   },
-  cardNumber: {
-    fontSize: 22,
-    color: '#fff',
-    marginBottom: 10,
-  },
-  cardHolder: {
-    fontSize: 18,
-    color: '#fff',
-    marginBottom: 10,
-  },
-  cardDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  cardExpiry: {
-    color: '#fff',
-  },
-  cardCVV: {
-    color: '#fff',
-  },
-  cardLogo: {
-    alignSelf: 'flex-end',
+  cardImage: {
+    width: "100%",
+    height: "100%",
+    // Adjust the aspect ratio as per your image
   },
   actionButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 20,
   },
   actionButton: {
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
   },
   transactionSection: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 10,
   },
   transactionTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   sellAll: {
-    color: 'blue',
+    color: "blue",
   },
   transactionList: {
     marginBottom: 20,
   },
   transactionItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 10,
   },
   transactionDetails: {
@@ -188,16 +185,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   transactionCategory: {
-    color: '#666',
+    color: "#666",
   },
   transactionAmount: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   navbar: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     borderTopWidth: 1,
-    borderTopColor: '#ddd',
+    borderTopColor: "#ddd",
     paddingTop: 10,
   },
 });

@@ -1,0 +1,28 @@
+// App.js
+import React, { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider as PaperProvider, DefaultTheme, DarkTheme } from 'react-native-paper';
+import HomeScreen from './screens/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const theme = isDarkTheme ? DarkTheme : DefaultTheme;
+
+  return (
+    <PaperProvider theme={theme}>
+      <NavigationContainer theme={theme}>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home">
+            {(props) => <HomeScreen {...props} setIsDarkTheme={setIsDarkTheme} />}
+          </Stack.Screen>
+          <Stack.Screen name="Settings">
+            {(props) => <SettingsScreen {...props} isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />}
+          </Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>clear
